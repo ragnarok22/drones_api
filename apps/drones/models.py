@@ -11,6 +11,9 @@ class Drone(models.Model):
     battery_capacity = models.IntegerField(default=100)
     state = models.CharField(max_length=50, choices=DRONE_STATE_CHOICES)
 
+    class Meta:
+        ordering = ["id"]
+
     def __str__(self):
         return f"{self.serial_number} {self.model}"
 
@@ -30,6 +33,9 @@ class Medication(models.Model):
     image = models.ImageField()
     drone_assigned = models.ForeignKey(Drone, null=True, blank=True, on_delete=models.DO_NOTHING,
                                        related_name="medications")
+
+    class Meta:
+        ordering = ["id"]
 
     def __str__(self):
         return self.name

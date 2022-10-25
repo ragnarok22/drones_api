@@ -1,16 +1,14 @@
-from rest_framework import generics, permissions
+from rest_framework import permissions, viewsets
 
 from apps.accounts.serializers import UserSerializer
 from . import models
 
 
-class UserList(generics.ListCreateAPIView):
-    queryset = models.User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
-
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+    """
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
