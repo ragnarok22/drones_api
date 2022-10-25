@@ -29,5 +29,5 @@ jobs:
     - run: poetry install
     - name: Run Tests
       run: |
-        coverage run manage.py test
-        coverage report
+        poetry run coverage run manage.py test
+        poetry run coverage report
