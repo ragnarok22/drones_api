@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.8"
 Django = "^3.2"
 psycopg2 = "^2.9.5"
+Pillow = "^9.2.0"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.5.0"
