@@ -4,7 +4,7 @@ from .models import Drone, Medication
 
 @admin.register(Drone)
 class DroneAdmin(admin.ModelAdmin):
-    list_display = ("serial_number", "model", "weight_limit", "battery_capacity", "state")
+    list_display = ("serial_number", "model", "battery_capacity", "state", "occupied_weight", "free_weight")
     list_filter = ("model", "state")
 
 

@@ -14,6 +14,14 @@ class Drone(models.Model):
     def __str__(self):
         return f"{self.serial_number} {self.model}"
 
+    def occupied_weight(self):
+        return Medication.objects.filter(drone_assigned=self).aggregate(
+            occupied_weight=models.Sum('weight')
+        )["occupied_weight"]
+
+    def free_weight(self):
+        return self.weight_limit - self.occupied_weight()
+
 
 class Medication(models.Model):
     name = models.CharField(max_length=255, validators=[validators.medication_name_validator])
