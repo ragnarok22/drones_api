@@ -37,7 +37,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    # graphene_django and other cool stuff
+    "rest_framework"
 ]
 
 LOCAL_APPS = [
