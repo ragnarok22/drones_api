@@ -119,7 +119,7 @@ docs = ["furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-autodoc-typehint
 test = ["appdirs (==1.4.4)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)", "pytest (>=6)"]
 
 [[package]]
-name = "psycopg2"
+name = "psycopg2-binary"
 version = "2.9.5"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
 category = "main"
@@ -161,7 +161,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "129984561516b088ee5fe52d3387b7ce382dc23e380e2a30471cda2d4ceba9ab"
+content-hash = "752cfc7469f4d70a01a2f1900e51f4993c6ed146fd2de8512c83c2155616fb7d"
 
 [metadata.files]
 asgiref = [
@@ -245,7 +245,7 @@ platformdirs = [
     {file = "platformdirs-2.5.2-py3-none-any.whl", hash = "sha256:027d8e83a2d7de06bbac4e5ef7e023c02b863d7ea5d079477e722bb41ab25788"},
     {file = "platformdirs-2.5.2.tar.gz", hash = "sha256:58c8abb07dcb441e6ee4b11d8df0ac856038f944ab98b7be6b27b2a3c7feef19"},
 ]
-psycopg2 = []
+psycopg2-binary = []
 pytz = []
 sqlparse = []
 tomli = [

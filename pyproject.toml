@@ -8,8 +8,8 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^3.2"
-psycopg2 = "^2.9"
 Pillow = "^9.2"
+psycopg2-binary = "^2.9.5"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.5"
