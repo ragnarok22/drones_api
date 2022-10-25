@@ -133,3 +133,5 @@ dmypy.json
 
 # secrets config
 secrets.json
+
+drones_api/media
