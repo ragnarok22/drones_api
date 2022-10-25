@@ -27,6 +27,6 @@ def medication_code_validator(code: str) -> None:
 
     if not match or code is None:
         raise ValidationError(
-            _('%(code) is not valid. Allowed only upper case letters, underscore and numbers'),
+            _('%(code)s is not valid. Allowed only upper case letters, underscore and numbers'),
             params={'code': code}
         )
