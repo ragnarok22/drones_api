@@ -28,7 +28,8 @@ class Medication(models.Model):
     weight = models.FloatField()
     code = models.CharField(max_length=255, validators=[validators.medication_code_validator])
     image = models.ImageField()
-    drone_assigned = models.ForeignKey(Drone, null=True, blank=True, on_delete=models.DO_NOTHING, related_name="drone")
+    drone_assigned = models.ForeignKey(Drone, null=True, blank=True, on_delete=models.DO_NOTHING,
+                                       related_name="medications")
 
     def __str__(self):
         return self.name
