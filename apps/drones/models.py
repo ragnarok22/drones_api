@@ -18,7 +18,7 @@ class Drone(models.Model):
 class Medication(models.Model):
     name = models.CharField(max_length=255, validators=[validators.medication_name_validator])
     weight = models.FloatField()
-    code = models.CharField(max_length=255)
+    code = models.CharField(max_length=255, validators=[validators.medication_code_validator])
     image = models.ImageField()
 
     def __str__(self):

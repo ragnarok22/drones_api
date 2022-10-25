@@ -15,8 +15,18 @@ def weight_limit_validator(value) -> None:
 def medication_name_validator(name: str) -> None:
     match = re.fullmatch("[A-Za-z]*[0-9]*(_)*(-)*[A-Za-z]*[0-9]*", name)
 
-    if not match:
+    if not match or name is None:
         raise ValidationError(
             _('%(name)s is not valid. Allowed only letters, numbers, "-", "_"'),
             params={'name': name},
+        )
+
+
+def medication_code_validator(code: str) -> None:
+    match = re.fullmatch("[A-Z]*[0-9]*(_)*[A-Z]*[0-9]*", code)
+
+    if not match or code is None:
+        raise ValidationError(
+            _('%(code) is not valid. Allowed only upper case letters, underscore and numbers'),
+            params={'code': code}
         )

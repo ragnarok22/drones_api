@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 
-from apps.drones.validators import medication_name_validator
+from apps.drones.validators import medication_name_validator, medication_code_validator
 
 
 class ValidatorTestCase(TestCase):
@@ -13,3 +13,12 @@ class ValidatorTestCase(TestCase):
     def test_medication_name_fail(self):
         with self.assertRaises(ValidationError):
             medication_name_validator("NOT*A*MEDICATION")
+
+    def test_medication_code(self):
+        medication_code_validator("CODE123")
+        medication_code_validator("123CODE")
+        self.assertIsNone(medication_name_validator("DRONE_CODE"))
+
+    def test_medication_code_fail(self):
+        with self.assertRaises(ValidationError):
+            medication_code_validator("CodeInvalid")
