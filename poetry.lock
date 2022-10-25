@@ -161,7 +161,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "551e5cc38e587723fded0257a4079811a2e4c4a1895730a648c1e9c11a48af07"
+content-hash = "129984561516b088ee5fe52d3387b7ce382dc23e380e2a30471cda2d4ceba9ab"
 
 [metadata.files]
 asgiref = [
