@@ -1,4 +1,6 @@
+from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from apps.drones import validators
 from apps.drones.constants import DRONE_MODELS_CHOICES, DRONE_STATE_CHOICES
@@ -25,6 +27,16 @@ class Drone(models.Model):
 
     def free_weight(self):
         return self.weight_limit - self.occupied_weight()
+
+    def load_medications(self, medications):
+        total_weight = medications.aggregate(total_weight=models.Sum('weight'))['total_weight']
+        if total_weight <= self.free_weight():
+            medications.update(drone_assigned=self)
+        else:
+            raise ValidationError(
+                _('%(total_weight)dgr is too heavy for the Drone, only %(free_weight)dgr free.'),
+                params={'total_weight': total_weight, "free_weight": self.free_weight()},
+            )
 
 
 class Medication(models.Model):

@@ -28,3 +28,11 @@ Content-Type: application/json
   "weight_limit": 500,
   "state": "IDLE"
 }
+
+### Load a Drone
+POST http://localhost:8000/api/drones/3/load/
+Content-Type: application/json
+
+{
+  "medications": [1, 2]
+}
