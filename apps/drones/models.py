@@ -18,9 +18,10 @@ class Drone(models.Model):
         return f"{self.serial_number} {self.model}"
 
     def occupied_weight(self):
-        return Medication.objects.filter(drone_assigned=self).aggregate(
+        weight = Medication.objects.filter(drone_assigned=self).aggregate(
             occupied_weight=models.Sum('weight')
         )["occupied_weight"]
+        return weight if weight else 0
 
     def free_weight(self):
         return self.weight_limit - self.occupied_weight()
