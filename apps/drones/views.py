@@ -9,7 +9,7 @@ from .serializers import DroneSerializer, MedicationSerializer
 class DroneViewSet(viewsets.ModelViewSet):
     queryset = models.Drone.objects.all()
     serializer_class = DroneSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     @action(detail=True)
     def medications(self, request, *args, **kwargs):
@@ -21,4 +21,4 @@ class DroneViewSet(viewsets.ModelViewSet):
 class MedicationViewSet(viewsets.ModelViewSet):
     queryset = models.Medication.objects.all()
     serializer_class = MedicationSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
