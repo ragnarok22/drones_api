@@ -1,0 +1,22 @@
+### Drone list
+http://localhost:8000/api/drones
+Accept: application/json
+
+### Drone detail
+http://localhost:8000/api/drones/1
+Accept: application/json
+
+### Drone medications
+http://localhost:8000/api/drones/1/medications
+Accept: application/json
+
+### Registering a Drone
+POST http://localhost:8000/api/drones/
+Content-Type: application/json
+
+{
+  "serial_number": "R2D2",
+  "model": "Heavyweight",
+  "weight_limit": 500,
+  "state": "IDLE"
+}
