@@ -1,13 +1,21 @@
 ### Drone list
-http://localhost:8000/api/drones
+http://localhost:8000/api/drones/
 Accept: application/json
 
 ### Drone detail
-http://localhost:8000/api/drones/1
+http://localhost:8000/api/drones/1/
 Accept: application/json
 
 ### Drone medications
-http://localhost:8000/api/drones/1/medications
+http://localhost:8000/api/drones/1/medications/
+Accept: application/json
+
+### Drone available
+http://localhost:8000/api/drones/available/
+Accept: application/json
+
+### Drone battery
+http://localhost:8000/api/drones/1/battery/
 Accept: application/json
 
 ### Registering a Drone

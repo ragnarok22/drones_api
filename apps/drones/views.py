@@ -15,18 +15,21 @@ class DroneViewSet(viewsets.ModelViewSet):
     @action(detail=True)
     def medications(self, request, *args, **kwargs):
         drone = self.get_object()
-        print(drone)
-        return Response(DroneSerializer(drone).data.get("medications"))
+        serializer = self.get_serializer(drone)
+
+        return Response(serializer.data.get("medications"))
 
     @action(detail=False)
     def available(self, request, *args, **kwargs):
         drones = models.Drone.objects.filter(state=DroneState.IDLE.value)
-        return Response(DroneSerializer(drones, many=True).data)
+        serializer = self.get_serializer(drones, many=True)
+        return Response(serializer.data)
 
     @action(detail=True)
     def battery(self, request, *args, **kwargs):
         drone = self.get_object()
-        return Response(DroneSerializer(drone).data.get("battery_capacity"))
+        serializer = self.get_serializer(drone)
+        return Response(serializer.data.get("battery_capacity"))
 
 
 class MedicationViewSet(viewsets.ModelViewSet):
