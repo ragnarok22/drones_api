@@ -5,8 +5,8 @@
 
 ### Introduction
 There is a major new technology that is destined to be a disruptive force in the 
-field of transportation: **the drone**. Just as the mobile phone allowed developi
-ng countries to leapfrog older technologies for personal communication, the drone
+field of transportation: **the drone**. Just as the mobile phone allowed 
+developing countries to leapfrog older technologies for personal communication, the drone
  has the potential to leapfrog traditional transportation infrastructure.
 Useful drone functions include delivery of small items that are (urgently) needed
  in locations with difficult access.
@@ -27,8 +27,8 @@ Each **Medication** has:
 - code (allowed only upper case letters, underscore and numbers);
 - image (picture of the medication case).
 Develop a service via REST API that allows clients to communicate with the drones
- (i.e. **dispatch controller**). The specific communicaiton with the drone is out
-side the scope of this task. 
+ (i.e. **dispatch controller**). The specific communication with the drone is 
+outside the scope of this task. 
 The service should allow:
 
 - registering a drone;
@@ -45,8 +45,7 @@ While implementing your solution **please take care of the following requirement
 - There is no need for UI;
 - Prevent the drone from being loaded with more weight that it can carry;
 -
- Prevent the drone from being in LOADING state if the battery level is **below 25
-%**;
+ Prevent the drone from being in LOADING state if the battery level is **below 25%**;
 -
  Introduce a periodic task to check drones battery levels and create history/audi
 t event log for this.

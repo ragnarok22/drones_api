@@ -19,4 +19,5 @@ class DroneSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Drone
-        fields = ["id", "serial_number", "model", "weight_limit", "battery_capacity", "state", "medications"]
+        fields = ["id", "serial_number", "model", "weight_limit", "free_weight", "occupied_weight", "battery_capacity",
+                  "state", "medications"]
