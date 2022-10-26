@@ -3,22 +3,36 @@ version: "3"
 services:
   db:
     image: postgres:13.4
+    restart: always
+    container_name: drones_db
+    networks:
+      drones_subnet:
+        aliases:
+          - postgres
+    ports:
+      - "5432:5432"
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file:
       - .env
-  web:
+  api:
     container_name: drones_api
     build: .
-    command: gunicorn config.wsgi:application -b :8000 --log-file /code/logs/gunicorn.log
     volumes:
-      - ./data/static:/code/static/
-      - ./data/media:/code/media/
+      - ./data/static:/code/drones_api/static/
+      - ./data/media:/code/drones_api/media/
       - ./data/logs:/code/logs/
     env_file:
       - .env
+    networks:
+      drones_subnet:
+        aliases:
+          - drones_api
     ports:
       - "8000:8000"
     depends_on:
       - db
     restart: always
+
+networks:
+  drones_subnet:
