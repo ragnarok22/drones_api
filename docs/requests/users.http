@@ -1,3 +1,7 @@
-# Users list
+### Users list
 http://localhost:8000/api/users
+Accept: application/json
+
+### User detail
+http://localhost:8000/api/users/1
 Accept: application/json
