@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = get_env_variable("ALLOWED_HOSTS").split(" ")
 DEBUG = False
 
 SECRET_KEY = get_env_variable("SECRET_KEY")
@@ -15,3 +15,7 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = (
+    'rest_framework.renderers.JSONRenderer',
+)
