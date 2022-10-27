@@ -32,6 +32,3 @@ RUN chmod +x entrypoint.sh
 CMD python3 ./manage.py migrate --no-input; \
     python3 ./manage.py collectstatic --no-input; \
     ./entrypoint.sh
-
-EXPOSE 8000
-
