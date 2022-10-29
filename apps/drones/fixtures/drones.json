@@ -1,0 +1,112 @@
+[
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "R2D2",
+      "model": "Arturito",
+      "weight_limit": "300",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "C-3PO",
+      "model": "Goldy",
+      "weight_limit": "250",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "R5-D4",
+      "model": "Tatooine",
+      "weight_limit": "150",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "AP-5",
+      "model": "Imperial",
+      "weight_limit": "190",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "BD-1",
+      "model": "Cal Ketsis",
+      "weight_limit": "380",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "C1-10P",
+      "model": "Chopper",
+      "weight_limit": "460",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "MSE-6",
+      "model": "Mouse Droid",
+      "weight_limit": "100",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "MB",
+      "model": "Mister Bones",
+      "weight_limit": "340",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "4-LOM",
+      "model": "Zuckuss",
+      "weight_limit": "270",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "IG-11",
+      "model": "Nurse",
+      "weight_limit": "450",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  },
+  {
+    "model": "drones.Drone",
+    "fields": {
+      "serial_number": "EV-9D9",
+      "model": "Jabba’s",
+      "weight_limit": "110",
+      "battery_capacity": "100",
+      "state": "IDLE"
+    }
+  }
+]
