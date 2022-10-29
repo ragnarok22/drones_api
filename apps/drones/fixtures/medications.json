@@ -1,0 +1,65 @@
+[
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Sansanna-spice",
+      "weight": 50,
+      "code": "SANSANNA_SPICE",
+      "image": "/medications/spice.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Death-stick",
+      "weight": 90,
+      "code": "DEATH_STICK",
+      "image": "/medications/deathstick.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Kolto",
+      "weight": 75,
+      "code": "KOLTO",
+      "image": "/medications/kolto.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Gimer-bush",
+      "weight": 10,
+      "code": "GIMER_BUSH",
+      "image": "/medications/gimerbush.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Bantha-bile",
+      "weight": 120,
+      "code": "BANTHA_BILE",
+      "image": "/medications/banthabile.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Millaflower",
+      "weight": 85,
+      "code": "MILLAFLOWER",
+      "image": "/medications/millaflower.png"
+    }
+  },
+  {
+    "model": "drones.Medication",
+    "fields": {
+      "name": "Namana",
+      "weight": 100,
+      "code": "NAMANA",
+      "image": "/medications/namana.png"
+    }
+  }
+]

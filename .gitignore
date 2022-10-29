@@ -137,3 +137,5 @@ secrets.json
 data/
 
 drones_api/media
+# not ignore medications fixtures
+!drones_api/media/medications/banthabile.png

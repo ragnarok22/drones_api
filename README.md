@@ -46,7 +46,7 @@ This project create for you an administration account with username `admin` and 
 For providing initial data for models you can run this commands:
 
     python manage.py loaddata drones  # this create somes drones
-    python manage.pu loaddata medications  # this create some medications
+    python manage.py loaddata medications  # this create some medications
 
 ## Deploy
 
