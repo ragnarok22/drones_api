@@ -37,6 +37,8 @@ Then run the development server
     python manage.py runserver
 
 ## load testing data
+This project create for you an administration account with username `admin` and password `admin1`.
+
 For providing initial data for models you can run this commands:
 
     python manage.py loaddata drones  # this create somes drones
