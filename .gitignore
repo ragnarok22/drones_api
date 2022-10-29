@@ -136,6 +136,12 @@ secrets.json
 
 data/
 
-drones_api/media
+#drones_api/media
 # not ignore medications fixtures
 !drones_api/media/medications/banthabile.png
+!drones_api/media/medications/deathstick.png
+!drones_api/media/medications/gimerbush.png
+!drones_api/media/medications/kolto.png
+!drones_api/media/medications/millaflower.png
+!drones_api/media/medications/namana.png
+!drones_api/media/medications/spice.png

@@ -46,7 +46,7 @@ class Medication(models.Model):
     name = models.CharField(max_length=255, validators=[validators.medication_name_validator])
     weight = models.FloatField()
     code = models.CharField(max_length=255, validators=[validators.medication_code_validator])
-    image = models.ImageField()
+    image = models.ImageField(upload_to="medications/")
     drone_assigned = models.ForeignKey(Drone, null=True, blank=True, on_delete=models.DO_NOTHING,
                                        related_name="medications")
 
