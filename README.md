@@ -3,6 +3,10 @@
 Drone Transportation Infrastructure API
 
 ![Django CI](https://github.com/ragnarok22/drones_api/actions/workflows/django-test.yml/badge.svg)
+[![GitHub license](https://img.shields.io/github/license/ragnarok22/drones_api)](https://github.com/ragnarok22/drones_api/blob/main/LICENSE)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ragnarok22/drones_api)
+![GitHub repo size](https://img.shields.io/github/repo-size/ragnarok22/drones_api)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ragnarok22/drones_api)
 
 ## License
 
