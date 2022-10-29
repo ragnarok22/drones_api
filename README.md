@@ -36,6 +36,12 @@ Then run the development server
 
     python manage.py runserver
 
+## load testing data
+For providing initial data for models you can run this commands:
+
+    python manage.py loaddata drones  # this create somes drones
+    python manage.pu loaddata medications  # this create some medications
+
 ## Deploy
 
 This project use [Docker](https://www.docker.com) for deployment
