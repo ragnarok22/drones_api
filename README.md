@@ -14,13 +14,13 @@ Distributed under the terms of the [MIT](LICENSE) license.
 
 ## Running in development mode
 
-### create a isolation environment
+### create an isolation environment
 
 (This step is not required if you use [poetry](https://python-poetry.org))
 
     python -m venv .venv
 
-### install the dependencies
+### install dependencies
 
     pip install .
 
@@ -41,16 +41,16 @@ Then run the development server
     python manage.py runserver
 
 ## load testing data
-This project create for you an administration account with username `admin` and password `admin1`.
+This project creates for you an administration account with username `admin` and password `admin1`.
 
-For providing initial data for models you can run this commands:
+For providing initial data for models you can run these commands:
 
     python manage.py loaddata drones  # this create somes drones
     python manage.py loaddata medications  # this create some medications
 
 ## Deploy
 
-This project use [Docker](https://www.docker.com) for deployment
+This project uses [Docker](https://www.docker.com) for deployment
 
 ### environment variables
 
