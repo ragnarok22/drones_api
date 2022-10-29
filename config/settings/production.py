@@ -1,7 +1,6 @@
 from .base import *
 
 ALLOWED_HOSTS = get_env_variable("ALLOWED_HOSTS").split(" ")
-print(ALLOWED_HOSTS)
 DEBUG = False
 
 SECRET_KEY = get_env_variable("SECRET_KEY")
