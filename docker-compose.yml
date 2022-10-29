@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx:1.23.2
     ports:
-      - "80:80"
+      - "8000:80"
     volumes:
       - static_files:/code/drones_api/static
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
@@ -23,8 +23,6 @@ services:
       drones_subnet:
         aliases:
           - postgres
-    ports:
-      - "5432:5432"
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file:
@@ -42,8 +40,6 @@ services:
       drones_subnet:
         aliases:
           - drones_api
-    ports:
-      - "8000:8000"
     depends_on:
       - db
     restart: always
