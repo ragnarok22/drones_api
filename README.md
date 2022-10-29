@@ -18,35 +18,49 @@ Distributed under the terms of the [MIT](LICENSE) license.
 
 (This step is not required if you use [poetry](https://python-poetry.org))
 
-    python -m venv .venv
+```shell
+python -m venv .venv
+```
 
 ### install dependencies
 
-    pip install .
+```shell
+pip install .
+```
 
 or use poetry:
 
-    poetry install
+```shell
+poetry install
+```
 
 ### Activate the local environment
 
-    source .venv/bin/activate
+```shell
+source .venv/bin/activate
+```
 
 or use poetry:
 
-    poetry shell
+```shell
+poetry shell
+```
 
 Then run the development server
 
-    python manage.py runserver
+```shell
+python manage.py runserver
+```
 
 ## load testing data
 This project creates for you an administration account with username `admin` and password `admin1`.
 
 For providing initial data for models you can run these commands:
 
-    python manage.py loaddata drones  # this create somes drones
-    python manage.py loaddata medications  # this create some medications
+```shell
+python manage.py loaddata drones  # this create some drones
+python manage.py loaddata medications  # this create some medications
+```
 
 ## Deploy
 
@@ -71,7 +85,9 @@ You must create .env file with the next variables:
 
 You must have installed Docker and Docker Compose to run the application:
 
-    docker-compose up -d
+```shell
+docker-compose up -d
+```
 
 ### Set Nginx
 
@@ -79,15 +95,14 @@ Here set an example for a nginx configuration and with the certbot to manage the
 This project is set to only run in secure protocol (https)
 
     server {
-    
-            server_name drones-api.ragnarok22.dev;
-    
-            location / {
-                    proxy_pass http://localhost:8000;
-                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                    proxy_set_header Host $host;
-                    proxy_redirect off;
-            }
+        server_name drones-api.ragnarok22.dev;
+
+        location / {
+            proxy_pass http://localhost:8000;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+        }
     
         listen [::]:443 ssl ipv6only=on; # managed by Certbot
         listen 443 ssl; # managed by Certbot
@@ -108,3 +123,14 @@ This project is set to only run in secure protocol (https)
         server_name drones-api.ragnarok22.dev;
         return 404; # managed by Certbot
     }
+
+## Running tests
+For running test
+
+```
+coverage run manage.py test apps
+coverage report
+```
+
+## API Documentation
+This API documentation is in [Postman](https://documenter.getpostman.com/view/8475386/2s8YKGjgb2)
