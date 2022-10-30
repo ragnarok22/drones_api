@@ -62,6 +62,12 @@ python manage.py loaddata drones  # this create some drones
 python manage.py loaddata medications  # this create some medications
 ```
 
+### Run periodic task to check the drone battery
+This will create a periodic task to check the Drone battery and create a Log every 8 hours
+```shell
+python manage.py check_battery
+```
+
 ## Deploy
 
 This project uses [Docker](https://www.docker.com) for deployment
