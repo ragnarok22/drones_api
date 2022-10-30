@@ -9,6 +9,7 @@ license = "MIT"
 server = "scripts.dev:runserver"
 test = "scripts.dev:test"
 celery = "scripts.dev:celery"
+migrate_all = "scripts.dev:migrate_all"
 
 [tool.poetry.dependencies]
 python = "^3.8"
