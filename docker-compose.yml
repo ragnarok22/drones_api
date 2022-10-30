@@ -3,7 +3,7 @@ version: "3"
 services:
   redis:
     image: redis:7.0
-    container_name: drone_redis
+    container_name: drones_redis
     networks:
       drones_subnet:
         aliases:
@@ -17,7 +17,7 @@ services:
     networks:
       drones_subnet:
         aliases:
-          - drones_worker
+          - worker
     depends_on:
       - api
       - redis
@@ -30,11 +30,12 @@ services:
     networks:
       drones_subnet:
         aliases:
-          - drones_beat
+          - beat
     depends_on:
       - celery_worker
   nginx:
     image: nginx:1.23.2
+    container_name: drones_nginx
     ports:
       - "8000:80"
     volumes:
