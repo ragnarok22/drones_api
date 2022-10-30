@@ -1,6 +1,38 @@
 version: "3"
 
 services:
+  redis:
+    image: redis:7.0
+    container_name: drone_redis
+    networks:
+      drones_subnet:
+        aliases:
+          - redis
+  celery_worker:
+    container_name: drones_celery_worker
+    build: .
+    command: ./celery_worker.sh
+    env_file:
+      - .env
+    networks:
+      drones_subnet:
+        aliases:
+          - drones_worker
+    depends_on:
+      - api
+      - redis
+  celery_beat:
+    container_name: drones_celery_beat
+    build: .
+    command: ./celery_beat.sh
+    env_file:
+      - .env
+    networks:
+      drones_subnet:
+        aliases:
+          - drones_beat
+    depends_on:
+      - celery_worker
   nginx:
     image: nginx:1.23.2
     ports:
