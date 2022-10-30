@@ -147,5 +147,21 @@ AUTH_USER_MODEL = 'accounts.User'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-
 }
+
+# Celery configurations
+CELERY_BROKER_TRANSPORT = "redis"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "UTC"
+CELERY_BROKER_TRANSPORT_OPTIONS = {
+    # "max_retries": 3,
+    # "interval_start": 0,
+    # "interval_step": 0.2,
+    # "interval_max": 0.5,
+    # ten years
+    # "visibility_timeout": timedelta(days=10 * 12 * 30).total_seconds()
+}
+CELERY_BROKER_URL = get_env_variable("REDIS_URL", "redis://localhost:6379")
+CELERY_RESULT_BACKEND = get_env_variable("REDIS_URL", "redis://localhost:6379")
