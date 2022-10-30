@@ -14,6 +14,23 @@ class DroneViewSet(viewsets.ModelViewSet):
 
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+    def get_queryset(self):
+        queryset = self.queryset
+
+        model = self.request.query_params.get("model")
+        if model:
+            queryset = queryset.filter(model=model)
+
+        battery_capacity = self.request.query_params.get("battery_capacity")
+        if battery_capacity:
+            queryset = queryset.filter(battery_capacity__gt=battery_capacity)
+
+        state = self.request.query_params.get("state")
+        if state:
+            queryset = queryset.filter(state=state)
+
+        return queryset
+
     @action(detail=True)
     def medications(self, request, *args, **kwargs):
         drone = self.get_object()
