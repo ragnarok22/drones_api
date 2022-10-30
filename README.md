@@ -130,6 +130,12 @@ This project is set to only run in secure protocol (https)
         return 404; # managed by Certbot
     }
 
+### Run periodic task in production
+
+```shell
+docker-compose run api python manage.py check_battery
+```
+
 ## Running tests
 For running test
 
