@@ -45,6 +45,7 @@ LOCAL_APPS = [
     'apps.accounts.apps.AccountsConfig',
     'apps.core.apps.CoreConfig',
     'apps.drones.apps.DronesConfig',
+    'apps.logs.apps.LogsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
