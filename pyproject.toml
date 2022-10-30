@@ -5,6 +5,11 @@ description = "Dron Transportation Infrastructure API"
 authors = ["Reinier Hernández <sasuke.reinier@gmail.com>"]
 license = "MIT"
 
+[tool.poetry.scripts]
+server = "scripts.dev:runserver"
+test = "scripts.dev:test"
+celery = "scripts.dev:celery"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^3.2"
