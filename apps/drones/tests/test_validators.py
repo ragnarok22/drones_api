@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 
-from apps.drones.validators import medication_name_validator, medication_code_validator
+from apps.drones.validators import medication_name_validator, medication_code_validator, weight_limit_validator
 
 
 class ValidatorTestCase(TestCase):
@@ -22,3 +22,12 @@ class ValidatorTestCase(TestCase):
     def test_medication_code_fail(self):
         with self.assertRaises(ValidationError):
             medication_code_validator("CodeInvalid")
+
+    def test_weight_limit(self):
+       weight_limit_validator(430) 
+       weight_limit_validator(130)
+       weight_limit_validator(500)
+
+    def test_weight_limit_fail(self):
+        with self.assertRaises(ValidationError):
+            weight_limit_validator(550)
