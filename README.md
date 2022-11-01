@@ -75,6 +75,11 @@ This will create a periodic task to check the Drone battery and create a Log eve
 python manage.py check_battery
 ```
 
+or you can specify the hours:
+```shell
+python manage.py check_battery --hour 5
+```
+
 ## Deploy
 
 This project uses [Docker](https://www.docker.com) for deployment
