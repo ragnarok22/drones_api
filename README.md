@@ -13,10 +13,16 @@ Drone Transportation Infrastructure API
 Distributed under the terms of the [MIT](LICENSE) license.
 
 ## Running in development mode
+This project was built using:
+- [Python](https://python.org)
+- [Django](https://djangoproject.com)
+- [Django Rest Framework](https://django-rest-framework.org)
+- [Docker](https://docker.com)
+- [Poetry](https://python-poetry.org) (not required)
 
 ### create an isolation environment
 
-(This step is not required if you use [poetry](https://python-poetry.org))
+(This step is not required if you use poetry)
 
 ```shell
 python -m venv .venv
