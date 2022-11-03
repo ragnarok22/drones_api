@@ -1,15 +1,17 @@
 """drones-api URL Configuration
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.core import views as core_views
+from rest_framework.schemas import get_schema_view
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+
 from apps.accounts import views as accounts_views
+from apps.core import views as core_views
 from apps.drones import views as drones_views
 from apps.logs import views as logs_views
-from django.conf import settings
-from django.conf.urls.static import static
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
@@ -25,6 +27,13 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('openapi', get_schema_view(
+        title="Drones API",
+        description="Drone Infrastructure API",
+        version="1.0.0",
+        url="https://drones-api.ragnarok22.dev/"
+    ), name='openapi-schema'),
+    path('docs/', core_views.DocsView.as_view(), name="docs"),
 ]
 
 if settings.DEBUG:
