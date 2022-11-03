@@ -7,7 +7,7 @@ from . import models
 class UserViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
+    `update` and `destroy` actions for **Users**.
     """
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
